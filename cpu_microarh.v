@@ -174,7 +174,7 @@
    m4+tb()
    *failed = *cyc_cnt > M4_MAX_CYC;
 
-   $wr_en = $rd != 5'b0 && ($rd_valid || $imm_valid);
+   $wr_en = $rd != 5'b0 && $rd_valid;
    
    m4+rf(32, 32, $reset, $wr_en, $rd, $final_data, $rs1_valid, $rs1, $src1_value, $rs2_valid, $rs2, $src2_value)
    m4+dmem(32, 32, $reset, $result[6:2], $is_s_instr, $src2_value, $is_load, $ld_data)
